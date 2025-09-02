@@ -386,7 +386,7 @@ jobs:
   contracts-bedrock-build:
     docker:
       - image: <<pipeline.parameters.default_docker_image>>
-    resource_class: xlarge
+    resource_class: large
     parameters:
       build_args:
         description: Forge build arguments
@@ -686,7 +686,7 @@ jobs:
     circleci_ip_ranges: true
     docker:
       - image: <<pipeline.parameters.default_docker_image>>
-    resource_class: xlarge
+    resource_class: large
     parameters:
       test_list:
         description: List of test files to run
@@ -860,7 +860,7 @@ jobs:
         type: string
     docker:
       - image: <<pipeline.parameters.default_docker_image>>
-    resource_class: xlarge
+    resource_class: large
     steps:
       - checkout-from-workspace
       - check-changed:
@@ -1494,7 +1494,7 @@ jobs:
       SEMGREP_COMMIT: << pipeline.git.revision >>
     docker:
       - image: returntocorp/semgrep
-    resource_class: xlarge
+    resource_class: large
     steps:
       - checkout # no need to use mise here since the docker image contains the only dependency
       - unless:
